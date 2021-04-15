@@ -140,7 +140,10 @@ func remove_to_index(s []string, index int) []string {
 	x = [4 5 6 7 8 9]
 
 	 */
-	return append(s[index:len(s)], s[len(s):]...)
+	sub := make([]string, len(s))
+	copy(sub, s)
+	sub = append(sub[index:len(s)], s[len(s):]...)
+	return sub
 }
 
 func main()(){
